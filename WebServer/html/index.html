@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
+
+  <title>LSSY交易服务平台</title>
+</head>
+
+<body>
+  <div class="pos-f-t">
+    <div class="navbar-expand-lg" id="navbarToggleExternalContent">
+      <div class="bg-dark p-4">
+        <h5 class="text-white h4">LSSY交易服务平台</h5>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">行情</a>
+        <a class="nav-item nav-link" href="#" id="fupan">今日复盘</a>
+        <a class="nav-item nav-link" href="#">策略</a>
+        <a class="nav-item nav-link" href="/backtest.html">回测</a>
+      </div>
+    </nav>
+  </div>
+  <!-- 提示 -->
+  <div aria-live="polite" aria-atomic="true"
+    class="container-fluid h-100 d-flex justify-content-center align-items-center" style="display: none !important;">
+    <div id="info_toast" class="toast w-50 border" role="alert" aria-live="assertive" aria-atomic="true"
+      data-delay="3000">
+      <div class="toast-header text-white bg-dark">
+        <strong class="mr-auto">标题</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body bg-dark">
+        <img src="#" class="rounded mr-2" alt="...">
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- 状态提示 -->
+  <div id="zs" class="container-fluid clearfix"></div>
+  <div class="container text-white bg-dark">
+    <div class="row">
+      <div class="col-md-auto">更新时间：</div>
+      <div id="last_time" class="col-md-auto"></div>
+      <div class="col-md-auto">延时：</div>
+      <div id="info_y" class="col-md-auto"></div>
+      <div class="col-md-auto">市场情绪：</div>
+      <div id="info_schyd" class="col-md-auto"></div>
+    </div>
+  </div>
+  <!-- 行情 -->
+  <div class="container-fluid">
+    <table id="mainTableQuotation" class="table table-sm table-hover table-dark"></table>
+  </div>
+  <!-- tick modal -->
+  <div class="modal fade" id="modal_tick" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="ticktitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 95% !important;" role="document">
+      <div class="modal-content text-white bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title text-white" id="ticktitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="kline_day" class="float-left"></div>
+          <div id="tick" class="float-right"></div>
+          <div id="finance_profit" style="clear: both !important;" class="float-left"></div>
+          <div id="finance_growth" class="float-left"></div>
+          <div id="finance_balance" class="float-left"></div>
+          <div id="finance_operation" class="float-left"></div>
+          <div id="finance_cash_flow" class="float-left"></div>
+          <div id="baseinfo" class="float-left"></div>
+          <div class="float-left mt-3" style="width: 100%; height: 90px; clear: both !important;">
+            <div class="float-left">
+              <table id="wtTable" class="table table-sm table-hover table-dark"></table>
+            </div>
+            <div class="float-left mr-3">
+              <div id="cjLoading" class="spinner-border text-danger" role="status" style="display: none;">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <div class="float-right" style="width: 900px">
+              <button type="button" class="btn btn-outline-primary btn-lg float-right w-25 mr-3" data-toggle="modal"
+                data-target="#cancelModal">全撤</button>
+              <button type="button" id="btnTogSell" class="btn btn-outline-success btn-lg float-right w-25 mr-3"
+                data-toggle="modal" data-target="#sellModal">卖出</button>
+              <button type="button" class="btn btn-outline-danger btn-lg float-right w-25 mr-3" data-toggle="modal"
+                data-target="#buyModal">买入</button>
+            </div>
+          </div>
+          <div class="container-fluid float-left" style="clear: both !important;">
+            <table id="tickTable" class="table table-sm table-hover table-dark"></table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 买入确认 -->
+  <div class="modal fade" id="buyModal" tabindex="-1" role="dialog" aria-labelledby="buyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content text-white bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title text-primary" id="buyModalLabel">买入确认</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="float-left mb-2" id="buyText"></div>
+          <div class="input-group input-group-sm w-25 mb-3 float-left" style="clear: both !important;">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-cw">仓位</span>
+            </div>
+            <input type="text" class="form-control" id="buyCangwei" value="1" aria-describedby="inputGroup-cw">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="container-fluid clearfix">
+            <button id="buy" type="button" class="btn btn-danger float-left">确认</button>
+            <button type="button" class="btn btn-success float-right" data-dismiss="modal">取消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 卖出确认 -->
+  <div class="modal fade" id="sellModal" tabindex="-1" role="dialog" aria-labelledby="sellModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content text-white bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title text-primary" id="sellModalLabel">卖出确认</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <span id="sellText"></span>
+        </div>
+        <div class="modal-footer">
+          <div class="container-fluid clearfix">
+            <button id="sell" type="button" class="btn btn-danger float-left">确认</button>
+            <button type="button" class="btn btn-success float-right" data-dismiss="modal">取消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 撤单确认 -->
+  <div class="modal fade" id="cancelModal" tabindex="-1" role="dialog" aria-labelledby="cancelModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content text-white bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title text-primary" id="cancelModalLabel">撤单确认</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <span id="cancelModalText"></span>
+        </div>
+        <div class="modal-footer">
+          <div class="container-fluid clearfix">
+            <button id="cancelOderAll" type="button" class="btn btn-danger float-left">确认</button>
+            <button type="button" class="btn btn-success float-right" data-dismiss="modal">取消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">流失岁月资管综合服务平台</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">行情</a>
+            <a class="nav-item nav-link" href="#">实盘</a>
+            <a class="nav-item nav-link" href="#">策略</a>
+            <a class="nav-item nav-link" href="#">回测</a>
+            <a class="nav-item nav-link" href="#">模拟</a>
+          </div>
+        </div>
+      </nav>
+      -->
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+  <!-- 直接把下载页面的CDN链接文件另存为保存，不要下载文件有乱码问题 -->
+  <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+  <script type="text/javascript" src="d3/d3.min.js"></script>
+  <script type="text/javascript" src="js/comm.js"></script>
+  <script type="text/javascript" src="js/tableMain.js"></script>
+  <script type="text/javascript" src="js/tableTick.js"></script>
+  <script type="text/javascript" src="js/tableChengjiao.js"></script>
+  <script type="text/javascript" src="js/event_el.js"></script>
+  <script type="text/javascript" src="js/event_user.js"></script>
+  <script type="text/javascript" src="js/ChartKline.js"></script>
+  <script type="text/javascript" src="js/ChartTick.js"></script>
+  <script type="text/javascript" src="js/ChartFinance.js"></script>
+</body>
+
+</html>
