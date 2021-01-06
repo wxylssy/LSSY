@@ -43,3 +43,4 @@ http://127.0.0.1:8000/
 
 
 社区讨论群：
+![image](https://github.com/wxylssy/LSSY/blob/master/pic/qq.png)
