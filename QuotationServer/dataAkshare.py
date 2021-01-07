@@ -66,7 +66,11 @@ def get_kline(code, start_date: datetime.date):
 
 def jijin_cg(code):
     result = []
-    df = ak.stock_fund_stock_holder(stock=code)
+    df = None
+    try:
+        df = ak.stock_fund_stock_holder(stock=code)
+    except:
+        pass
     if df is None or df.empty:
         return result
     spl_date = str(df.iloc[0]['截止日期']).replace('-', '')
@@ -88,7 +92,11 @@ def jigou_cg(code, quarter):
     机构持股一览表，quarter是年度和季度，注意要看当前季度有没有数据
     """
     result = []
-    df = ak.stock_institute_hold_detail(stock=code, quarter=quarter)
+    df = None
+    try:
+        df = ak.stock_institute_hold_detail(stock=code, quarter=quarter)
+    except:
+        pass
     if df is None or df.empty:
         return result
     for row in df.itertuples(index=False):
@@ -104,7 +112,11 @@ def liutong_gudong(code):
     流通股东
     """
     result = []
-    df = ak.stock_circulate_stock_holder(stock=code)
+    df = None
+    try:
+        df = ak.stock_circulate_stock_holder(stock=code)
+    except:
+        pass
     if df is None or df.empty:
         return result
     spl_date = str(df.iloc[0]['截止日期']).replace('-', '')
@@ -130,7 +142,11 @@ def _get_detail_hangye(label):
     :return:
     """
     result = []
-    df = ak.stock_sector_detail(sector=label)
+    df = None
+    try:
+        df = ak.stock_sector_detail(sector=label)
+    except:
+        pass
     if df is None or df.empty:
         return result
     for row in df.itertuples():
