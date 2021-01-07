@@ -7,7 +7,11 @@
 LSSY量化交易系统致力于量化交易，不再主观交易，只做确定性，让量化交易不再是机构专属，大家都可以参与完善，**为了更好的利于社区发展，目前采用邀请制，使用邀请码才能完整的使用LSSY量化交易系统**，提交代码或者邀请朋友都可以免费获得邀请码（在社区讨论QQ群发放）。
 
 # 安装
-Windows用户需要安装linux子系统。
+
+需要 python3.8 
+Linux 可以下载源码编译：https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tgz
+
+Windows用户需要安装linux子系统，选择ubuntu子系统里面默认的就是python3.8。
 
 安装redis数据库
 ```
