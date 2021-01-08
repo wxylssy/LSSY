@@ -151,6 +151,7 @@ def get_ticks_from_xg_and_start_backtest(commobj, back_test_date: datetime.datet
             # 复权
             factor = rdkline.get_adjust_factor(code, back_test_date)
             for tk in ticks:
+                tk['price'] = Decimal(tk['price'])
                 tk['price'] = (tk['price'] * factor).quantize(Decimal('0.01'), ROUND_HALF_UP)
         rdbacktest.wirte_l_datas(code, ticks)
     if len(rdbacktest.read_codes()) == 0:
