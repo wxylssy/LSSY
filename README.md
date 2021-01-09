@@ -1,8 +1,8 @@
 # LSSY量化交易系统
 
-开源的目的是希望能有更多的人来参与社区维护，共同打造最完美的量化交易系统。
+支持A股和可转债市场并且可以实盘全自动交易的量化交易系统。
 
-支持A股和可转债市场。
+开源的目的是希望能有更多的人来参与社区维护，共同打造最完美的量化交易系统。
 
 目前市场上集量化回测、实盘交易的系统并不多，适用A股的更是寥寥无几，要么收费高昂，LSSY量化交易系统为了让研究量化交易的朋友人人都能用，所以在此开源，并且完全免费，希望更多的人来参与完善系统，贡献自己的一份力量。
 
@@ -10,17 +10,24 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
 
 # 安装
 
-需要在 python3.8 下运行
+* Windows
 
-Linux 可以下载源码编译：https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tgz
+  需要安装linux子系统，选择ubuntu子系统(里面默认的是python3.8)，然后进入子系统操作，其他和Linux操作一样。
+  
+  视频教程：https://www.bilibili.com/video/BV1Bh41127WF
+  
+* Linux
 
-Windows用户需要安装linux子系统，选择ubuntu子系统里面默认的就是python3.8。
+  需要在 python3.8 下运行，如果系统不是3.8版本需要安装。
 
-安装redis数据库
+  下载源码编译：https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tgz
+  
+  安装redis数据库
 ```
-apt install redis
+  apt install redis
 ```
-python 包
+
+* 依赖的 python 包
 ```
 pip3 install tornado
 pip3 install redis
