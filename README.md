@@ -10,7 +10,7 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
 
 # 安装
 
-* **Windows**
+  * **Windows**
 
   需要安装linux子系统，选择ubuntu子系统(里面默认的是python3.8)，然后进入子系统操作，其他和Linux操作一样。
   
@@ -21,26 +21,26 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
   
   Windows安装视频教程：https://www.bilibili.com/video/BV1Bh41127WF
   
-* **Linux**
+  * **Linux**
 
   需要在 python3.8 下运行，如果系统不是3.8版本需要安装。
 
   下载源码编译：https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tgz
   
-* 安装 redis 数据库
+  * 安装 redis 数据库
   ```
   apt install redis
   ```
 
-* 安装 python 包
-```
-pip3 install tornado
-pip3 install redis
-pip3 install pytdx
-pip3 install baostock
-pip3 install pycryptodome
-pip3 install akshare
-```
+  * 安装 python 包
+  ```
+  pip3 install tornado
+  pip3 install redis
+  pip3 install pytdx
+  pip3 install baostock
+  pip3 install pycryptodome
+  pip3 install akshare
+  ```
 
 # 启动LSSY量化交易系统
 进入实盘交易
