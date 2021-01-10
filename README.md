@@ -14,11 +14,6 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
 
     需要安装linux子系统，选择ubuntu子系统（里面默认的是python3.8），然后进入子系统操作，其他和Linux操作一样。
   
-    子系统没有pip3命令需要安装：
-    ```
-    apt install python3-pip
-    ```
-  
     Windows安装视频教程：https://www.bilibili.com/video/BV1Bh41127WF
   
   * **Linux**
@@ -36,6 +31,9 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
 
   ### 安装 python 包 ###
     ```
+    # 没有pip3 需要安装
+    apt install python3-pip
+    
     pip3 install tornado
     pip3 install redis
     pip3 install pytdx
