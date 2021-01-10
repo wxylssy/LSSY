@@ -27,7 +27,7 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
 
     下载源码编译：https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tgz
   
-  * 安装 redis 数据库
+  ### 安装 redis 数据库 ###
     ```
     apt install redis
     ```
