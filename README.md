@@ -22,14 +22,14 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
 
     下载源码编译：https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tgz
   
-  ### 安装并启动 redis 数据库 ###
+  ## 安装并启动 redis 数据库
     ```
     apt install redis
     # 启动数据库，此条命令仅在ubuntu子系统的时候需要，Linux用户一般安装好了会自动启动
     redis-server /etc/redis/redis.conf
     ```
 
-  ### 安装 python 包 ###
+  ### 安装 python 包
     ```
     # 没有pip3 需要安装
     apt install python3-pip
