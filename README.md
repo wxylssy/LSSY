@@ -13,6 +13,10 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
   * **Windows**
 
     需要安装linux子系统，选择ubuntu子系统（里面默认的是python3.8），然后进入子系统操作，其他和Linux操作一样。
+    
+    安装 redis 数据库，下载地址：https://redis.io/download
+    
+    选择 Stable 版本，点击下载。
   
     Windows安装视频教程：https://www.bilibili.com/video/BV1Bh41127WF
   
@@ -22,10 +26,9 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
 
     下载源码编译：https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tgz
  
-  ### 安装并启动 redis 数据库
+  ### 安装并启动 redis 数据库 （Windows用户跳过）
   ```
   sudo apt install redis
-  sudo redis-server /etc/redis/redis.conf
   ```
 
   ### 安装 python 包
