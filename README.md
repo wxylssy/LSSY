@@ -24,21 +24,21 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
  
   ### 安装并启动 redis 数据库
   ```
-  apt install redis
-  redis-server /etc/redis/redis.conf
+  sudo apt install redis
+  sudo redis-server /etc/redis/redis.conf
   ```
 
   ### 安装 python 包
   ```
-  apt install python3-pip
+  sudo apt install python3-pip
 
-  pip3 install tornado
-  pip3 install redis
-  pip3 install pytdx
-  pip3 install baostock
-  pip3 install pycryptodome 
-  pip3 install akshare
-  pip3 install plotly
+  sudo pip3 install tornado
+  sudo pip3 install redis
+  sudo pip3 install pytdx
+  sudo pip3 install baostock
+  sudo pip3 install pycryptodome 
+  sudo pip3 install akshare
+  sudo pip3 install plotly
   ```
 
 # 启动LSSY量化交易系统
