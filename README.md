@@ -40,6 +40,7 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
     pip3 install baostock
     pip3 install pycryptodome
     pip3 install akshare
+    pip3 install plotly
     ```
 
 # 启动LSSY量化交易系统
