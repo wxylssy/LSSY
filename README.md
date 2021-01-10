@@ -30,7 +30,6 @@ redis-server /etc/redis/redis.conf
 
   ### 安装 python 包
     ```
-    # 没有pip3 需要安装
     apt install python3-pip
     
     pip3 install tornado
