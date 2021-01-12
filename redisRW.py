@@ -160,6 +160,7 @@ class redisrw:
             v_json = json.loads(v, parse_float=Decimal)
             if datetime.datetime.strptime(v_json['datetime'], '%Y%m%d').date() == date.date():
                 return v_json['factor']
+        return Decimal(1)
 
     def read_klines_from_before_date_count_dec(self, code, date: datetime.datetime, count):
         """
