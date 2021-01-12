@@ -116,7 +116,7 @@ def get_all_clear_finance_qfq_kline_from_start_date(start_date: datetime.date):
             if not rdfinance.write_json(code, finance_data):
                 bar.out_text(code, '财务信息存储错误。')
         # 没有基本信息则更新
-        if len(rdbaseinfo.read_l_str(code, 0, 0)) == 0:
+        '''if len(rdbaseinfo.read_l_str(code, 0, 0)) == 0:
             rdbaseinfo.wirte_l_datas(code, _get_baseinfo(code))
             gbchg = tdx.get_liutong(code)
-            rdbaseinfo.wirte_l_data(code, {'name': '流通股本', 'value': gbchg[0]['liutong'] * 10000})
+            rdbaseinfo.wirte_l_data(code, {'name': '流通股本', 'value': gbchg[0]['liutong'] * 10000})'''
