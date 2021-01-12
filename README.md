@@ -12,7 +12,7 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
 
   * **Windows**
   
-    1.安装Linux子系统，选择ubuntu子系统（里面默认的是python3.8）。
+    1.安装Linux子系统，选择ubuntu子系统。
     
     2.给子系统安装pip3
     
@@ -26,15 +26,7 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
     sudo apt install redis
     ```
     
-    4.离线数据库（可选，首次安装下载较慢的用户），到社区QQ群下载离线数据库 dump.rdb 然后复制到子系统 ~/dump.rdb
-    
-    比如下载的 dump.rdb 文件放到了项目目录下，然后执行命令：
-    
-    ```
-    cp dump.rdb ~
-    ```
-    
-    5.启动数据库，子系统不能自动启动，所以每次都需要手动启动数据库服务，所以不建议在Windows上运行。
+    4.启动数据库，子系统不能自动启动，所以每次都需要手动启动数据库服务，所以不建议在Windows上运行。
     
     ```
     redis-server
@@ -50,9 +42,7 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
     sudo apt install redis
     ```
 
-    2.需要在 python3.8 下运行，如果系统不是3.8版本需要安装。
-
-    下载源码编译：https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tgz
+    2.需要 python3.7+
 
 # 执行安装脚本
 
