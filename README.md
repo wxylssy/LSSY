@@ -42,7 +42,9 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
     sudo apt install redis
     ```
 
-    2.python >= 3.7
+    2.需要 python3.8
+    
+    下载源码编译安装：https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tar.xz
 
 # 执行安装脚本
 
