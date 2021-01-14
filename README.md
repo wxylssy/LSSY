@@ -32,7 +32,7 @@ LSSY量化交易系统致力于量化交易，不再主观交易，只做确定�
     redis-server
     ```
     
-    Windows安装视频教程：https://www.bilibili.com/video/BV1Bh41127WF
+    Windows安装视频教程：https://www.bilibili.com/video/BV1pi4y1c7ZR
   
   * **Linux**
   
