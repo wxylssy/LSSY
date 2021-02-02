@@ -46,6 +46,21 @@ LSSY量化交易系统致力于量化交易，不再主观交易，通过数据�
     
     下载源码编译安装：https://www.python.org/ftp/python/3.8.7/Python-3.8.7.tar.xz
 
+ * **Mac OS**
+ 前提是先安装 brew 
+ 1. 安装 redis 数据库
+  ```
+    brew install redis
+    ```
+ 2. 安装Python 3.8 (建议使用pyenv) 
+ ```
+    brew install pyenv
+    ```
+     ```
+   pyenv install 3.8.7
+    ```
+   
+
 # 执行安装脚本
 
 ```
