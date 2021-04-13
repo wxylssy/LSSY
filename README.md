@@ -19,7 +19,7 @@ LSSY量化交易系统的**全面详细分析视频教程**
 https://edu.csdn.net/course/detail/31906
 
 
-# 依赖安装
+# 安装环境
 
   * Python 3.7+
 
