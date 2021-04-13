@@ -53,39 +53,39 @@ https://edu.csdn.net/course/detail/31906
 
   * Windows
 
-  进入实盘交易
+    进入实盘交易
 
-  ```
-  win_backtest.bat
-  ```
+    ```
+    win_backtest.bat
+    ```
 
-  进入回测
+    进入回测
 
-  ```
-  win_realtime.bat
-  ```
+    ```
+    win_realtime.bat
+    ```
 
   * Linux
 
-  进入实盘交易
+    进入实盘交易
 
-  ```
-  ./runWork.py
-  ```
+    ```
+    ./runWork.py
+    ```
 
-  进入回测
+    进入回测
 
-  ```
-  ./runWork.py b
-  ```
+    ```
+    ./runWork.py b
+    ```
 
 # 访问前端
 
-  推荐分辨率>=2k
+推荐分辨率>=2k
 
-  ```
-  http://127.0.0.1:8000/
-  ```
+```
+http://127.0.0.1:8000/
+```
 
 # 初次启动注意事项
 
