@@ -51,6 +51,18 @@ Linux
 
 # 启动LSSY量化交易系统
 
+* **Windows**
+
+进入实盘交易
+
+win_backtest.bat
+
+进入回测
+
+win_realtime.bat
+
+* **Linux**
+
 进入实盘交易
 
 ```
