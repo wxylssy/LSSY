@@ -1,0 +1,10 @@
+redis
+baostock
+pytdx
+akshare
+pycryptodome
+plotly
+tornado
+statsmodels
+numpy
+requests
