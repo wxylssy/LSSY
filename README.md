@@ -23,7 +23,7 @@ https://edu.csdn.net/course/detail/31906
 
   * Python 3.7+
 
-  * redis
+  * Redis
   
     Windows
     
@@ -55,11 +55,15 @@ Linux
 
 进入实盘交易
 
+```
 win_backtest.bat
+```
 
 进入回测
 
+```
 win_realtime.bat
+```
 
 * **Linux**
 
