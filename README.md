@@ -37,13 +37,13 @@ https://edu.csdn.net/course/detail/31906
 
 # 执行安装脚本
 
-  Windows
+  * Windows
 
   ```
   install.bat
   ```
 
-  Linux
+  * Linux
 
   ```
   ./install.sh
@@ -51,7 +51,7 @@ https://edu.csdn.net/course/detail/31906
 
 # 启动LSSY量化交易系统
 
-  * **Windows**
+  * Windows
 
   进入实盘交易
 
@@ -65,7 +65,7 @@ https://edu.csdn.net/course/detail/31906
   win_realtime.bat
   ```
 
-  * **Linux**
+  * Linux
 
   进入实盘交易
 
