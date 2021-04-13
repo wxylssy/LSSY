@@ -56,13 +56,13 @@ https://edu.csdn.net/course/detail/31906
     进入实盘交易
 
     ```
-    win_backtest.bat
+    win_realtime.bat
     ```
 
     进入回测
 
     ```
-    win_realtime.bat
+    win_backtest.bat
     ```
 
   * Linux
