@@ -2,8 +2,9 @@ from xmlrpc.client import ServerProxy
 import requests
 import json
 from decimal import *
+import redisRW
 
-url = 'http://127.0.0.1:8081'
+url = 'http://127.0.0.1:8001'
 
 def login():
     try:
@@ -26,7 +27,7 @@ def get_ky_balance():
 def buy(code, name, price, tol):
     try:
         data = {'code': code, 'name': name, 'price': price, 'tol': tol}
-        r = requests.post(url + '/buy', data=json.dumps(data))
+        r = requests.post(url + '/buy', data=json.dumps(data, cls=redisRW.DecEncoder))
         if r.status_code == 200:
             return True
     except Exception as e:
@@ -36,7 +37,7 @@ def buy(code, name, price, tol):
 def sell(code, name, price, tol):
     try:
         data = {'code': code, 'name': name, 'price': price, 'tol': tol}
-        r = requests.post(url + '/sell', data=json.dumps(data))
+        r = requests.post(url + '/sell', data=json.dumps(data, cls=redisRW.DecEncoder))
         if r.status_code == 200:
             return True
     except Exception as e:

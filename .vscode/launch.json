@@ -6,12 +6,19 @@
     "configurations": [
 
         {
-            "name": "runWork",
+            "name": "回测",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/runWork.py",
             "console": "integratedTerminal",
             "args": ["b"]
+        },
+        {
+            "name": "实盘",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/runWork.py",
+            "console": "integratedTerminal"
         },
         {
             "name": "test",
