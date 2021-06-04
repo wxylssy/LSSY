@@ -10,7 +10,7 @@ from multiprocessing import Process
 
 class Strategy:
     """
-    MACD
+    默认策略
     """
     def __init__(self, common_):
         self.common = common_
