@@ -8,7 +8,7 @@
 
 # 环境安装
 
-  * Python 3.7+
+  * Python 3.7.x or 3.8.x or 3.9.x
 
   * Redis
   
