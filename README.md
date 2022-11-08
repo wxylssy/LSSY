@@ -4,7 +4,7 @@
 
 该项目是本人3年来研究量化慢慢积累开发的一套系统，属于早期作品慢慢修改而来，仅供学习研究。
 
-联系微信：qiji_hello
+![image](https://github.com/wxylssy/LSSY/raw/master/%E4%B8%BB%E9%A1%B5%E9%9D%A2.png)
 
 # 环境安装
 
